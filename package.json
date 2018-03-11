@@ -1,0 +1,19 @@
+{
+  "name": "shipster_be",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GoetheProductions/shipster_be.git"
+  },
+  "author": "Patrick Goethe",
+  "bugs": {
+    "url": "https://github.com/GoetheProductions/shipster_be/issues"
+  },
+  "homepage": "https://github.com/GoetheProductions/shipster_be#readme"
+}
