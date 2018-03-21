@@ -3,7 +3,6 @@ import { index } from './controllers/users';
 
 const router = Router();
 
-router.route('/api/users')
-  .get(index)
+router.get('users', (req, res) => res.send('users here'));
 
 export default router;
