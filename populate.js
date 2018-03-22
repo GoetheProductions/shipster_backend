@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import User from './models/user';
+import Order from './models/order';
 import { URI } from './constants';
 
 /*
@@ -16,7 +17,10 @@ const users = [{
   email: 'john@doe.com',
   age: 25,
   userCount: 1,
-  currency: 'DKK',
+  localization: {
+    currency: 'DKK',
+    measurementUnit: 'cm',
+  },
   defaultPaymentMethod: 'mobile pay',
   meta: {
     lastLoginTime: date,
@@ -181,8 +185,11 @@ const users = [{
   email: 'donna@joe.com',
   age: 76,
   userCount: 2,
-  currency: 'DKK',
   defaultPaymentMethod: 'mobile pay',
+  localization: {
+    currency: 'DKK',
+    measurementUnit: 'cm',
+  },
   meta: {
     lastLoginTime: date,
     hasValidEmail: true,
@@ -344,12 +351,60 @@ const users = [{
   }],
 }];
 
+const orders = [{
+  creationDate: Date.now(),
+  items: [{
+    name: 'Cola',
+    brand: 'Coca Cola',
+    amount: 2,
+    store: 'Fakta',
+  }, {
+    name: 'Skum',
+    brand: 'Fo-Am',
+    amount: 1,
+    store: 'Netto',
+  }],
+  times: {
+    orderCreated: Date.now(),
+    orderPickedUp: Date.now(),
+    itemsPickedUp: Date.now(),
+    itemsDelivered: Date.now(),
+    deliveryAccepted: Date.now(),
+  },
+  deleveryPrice: 50,
+}, {
+  creationDate: Date.now(),
+  items: [{
+    name: 'Cola',
+    brand: 'Coca Cola',
+    amount: 2,
+    store: 'Fakta',
+  }, {
+    name: 'Skum',
+    brand: 'Fo-Am',
+    amount: 1,
+    store: 'Netto',
+  }],
+  times: {
+    orderCreated: Date.now(),
+    orderPickedUp: Date.now(),
+    itemsPickedUp: Date.now(),
+    itemsDelivered: Date.now(),
+    deliveryAccepted: Date.now(),
+  },
+  deleveryPrice: 50,
+}];
+
 mongoose.connect(URI);
 
 users.map((data) => {
   const user = new User(data);
-  user.save()
-    .then(() => {
-      console.log('populated');
-    });
+  user.save();
 });
+
+orders.map((data) => {
+  const order = new Order(data);
+  order.save();
+});
+
+console.log('populating');
