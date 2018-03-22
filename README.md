@@ -3,16 +3,30 @@
 
 ## UP AND RUNNING
 
-Info will come.
+install packages:
+`$ yarn`
+
+make sure mongoDB is running by running:
+`$ mongod`
+
+next, start server:
+`$ yarn start`
+
+to populate data:
+`$ yarn populate`
+
+go to route:
+`http://localhost:3000/api/v1/users`
+
+to see the API
 
 ## PURPOSE
 
 This backend is designed to connect with databases, and send and recieve information from Shipsters services.
 
 ## STACK
+`Node`, `Express`, `MongoDb`, `Mongoose`
 
-`Node.js`: For the backend server.
-`Realm`: Database that interacts well with Node.js as well as React Native applications
 
 ## UPDATES FROM PREVIOUS VERSIONS
 
