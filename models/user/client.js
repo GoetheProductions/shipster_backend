@@ -1,6 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 
 const ClientSchema = new Schema({
+  start: { type: Date },
   orders: {
     created: {
       total: { type: Number, default: 0 },
@@ -45,6 +46,7 @@ const ClientSchema = new Schema({
   },
   ratings: {
     total: { type: Number },
+    avg: { type: Number },
     ratings: [{
       rating: { type: Number },
       toUser: { type: Object },

@@ -1,6 +1,4 @@
 import mongoose, { Schema } from 'mongoose';
-import MetaSchema from './meta';
-import AddressesSchema from './addresses';
 
 const UserSchema = new Schema({
   firstName: { type: String, required: true },
@@ -10,12 +8,16 @@ const UserSchema = new Schema({
   age: { type: Number, required: true },
   userCount: { type: Number },
   currency: { type: String, default: 'DKK' },
-  // defaultPaymentMethod: { type: String },
-  // devices: [DevicesSchema],
+  measurementUnit: { type: String, default: 'km' },
+  defaultPaymentMethod: { type: String },
+  devices: { type: Array, ref: 'device' },
   addresses: { type: Array, ref: 'addresses' },
-  meta: { type: Schema.Types.ObjectId, ref: 'meta' },
-  // statistics: StatisticsSchema,
-  // range: RangeSchema,
+  meta: { type: Object, ref: 'meta' },
+  statistics: {
+    runner: { type: Object, ref: 'runner' },
+    client: { type: Object, ref: 'client' },
+  },
+  transportation: { type: Array, ref: 'transportation' },
 });
 
 export default mongoose.model('user', UserSchema);

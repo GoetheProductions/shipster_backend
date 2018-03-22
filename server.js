@@ -1,6 +1,10 @@
 import express from 'express';
 import morgan from 'morgan';
+import mongoose from 'mongoose';
 import router from './router';
+import { URI } from './constants';
+
+mongoose.connect(URI);
 
 const app = express();
 

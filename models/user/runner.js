@@ -1,6 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 
 const RunnerSchema = new Schema({
+  start: { type: Date },
   orders: {
     taken: {
       total: { type: Number, default: 0 },
@@ -46,6 +47,7 @@ const RunnerSchema = new Schema({
 
   ratings: {
     total: { type: Number },
+    avg: { type: Number },
     ratings: [{
       rating: { type: Number },
       fromUser: { type: Object },
@@ -53,7 +55,6 @@ const RunnerSchema = new Schema({
   },
 
   earnings: {
-    startedFrom: { type: Date },
     total: { type: Number, default: 0 },
     avg: {
       year: { type: Number, default: 0 },
