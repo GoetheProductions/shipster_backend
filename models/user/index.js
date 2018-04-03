@@ -16,8 +16,8 @@ const UserSchema = new Schema({
   addresses: { type: Array, ref: 'addresses' },
   meta: { type: Object, ref: 'meta' },
   statistics: {
-    runner: { type: Object, ref: 'runner' },
-    client: { type: Object, ref: 'client' },
+    shipper: { type: Object, ref: 'shipper' },
+    customer: { type: Object, ref: 'customer' },
   },
   transportation: { type: Array, ref: 'transportation' },
 });

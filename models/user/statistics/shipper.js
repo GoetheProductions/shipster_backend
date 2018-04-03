@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-const RunnerSchema = new Schema({
+const ShipperSchema = new Schema({
   start: { type: Date },
   orders: {
     taken: {
@@ -67,5 +67,5 @@ const RunnerSchema = new Schema({
 
 });
 
-export default mongoose.model('runner', RunnerSchema);
+export default mongoose.model('shipper', ShipperSchema);
 

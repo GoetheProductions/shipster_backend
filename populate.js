@@ -28,7 +28,7 @@ const users = [{
     isExpelled: false,
   },
   statistics: {
-    runner: {
+    shipper: {
       start: date,
       orders: {
         taken: {
@@ -93,7 +93,7 @@ const users = [{
         },
       },
     },
-    client: {
+    customer: {
       start: date,
       orders: {
         created: {

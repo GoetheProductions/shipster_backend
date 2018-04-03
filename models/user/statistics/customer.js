@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-const ClientSchema = new Schema({
+const CustomerSchema = new Schema({
   start: { type: Date },
   orders: {
     created: {
@@ -66,4 +66,4 @@ const ClientSchema = new Schema({
   },
 });
 
-export default mongoose.model('client', ClientSchema);
+export default mongoose.model('customer', CustomerSchema);
