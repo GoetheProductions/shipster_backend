@@ -5,7 +5,7 @@ const UserSchema = new Schema({
   lastName: { type: String, required: true },
   image: { type: Object, required: false },
   email: { type: String, required: true },
-  age: { type: Number, required: true },
+  age: { type: Number, required: false },
   localizations: {
     currency: { type: String, default: 'DKK' },
     measurementUnit: { type: String, default: 'km' },
