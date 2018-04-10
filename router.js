@@ -1,12 +1,21 @@
 import { Router } from 'express';
-import users from './controllers/users';
-import orders from './controllers/orders';
+import getList from './controllers/getList';
+
+import Order from './models/order';
+import User from './models/user';
+
+import getUser from './controllers/getUser';
+import { ENDPOINTS } from './constants';
 
 const router = Router();
 
-router.route('/users')
-  .get(users);
+router.route(ENDPOINTS.users)
+  .get(getList(User));
 
-router.route('/orders')
-  .get(orders);
+router.route(ENDPOINTS.orders)
+  .get(getList(Order));
+
+router.route(ENDPOINTS.user)
+  .get(getUser(User));
+
 export default router;
